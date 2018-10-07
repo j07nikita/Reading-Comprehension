@@ -1,6 +1,8 @@
 # Reading Comprehension 
 ## Team name: Flying Squad 
 ## Description
+The basic idea is to enable computers to read a document and answer general queries against it. While this sounds like a basic seventh grade task, getting machines to do it requires some understanding about NLP and training neural networks.
+The task at hand is therefore to identify types of questions, open or closed domains, and to design an approach that could solve the task of reading and selecting what part of the text could potentially answer the question. As we understand it, this is essentially a question answering task with respect to a short text.
 ## Related Readings
    #### Comprehension Reader
    Given a question q consisting of l tokens {q1 ,. . . ,ql} and a document of n paragraphs where a single paragraph p 
@@ -25,6 +27,7 @@
    To make scorescompatible across paragraphs,we use the unnormalized exponential and take argmax over all considered 
    paragraph spans for our final prediction.
 ## Baseline
+We chose to take the similarity based approach, due to the experiments that can be performed in this at the level of word embedding method and grouping of text to be embedded. The idea is to create word embeddings, and then embedding the entire paragraph. We then match words with their presence in the paragraphs to calculate probability. Questions and pasages hhave their own vectors, the sequence of passage vectors need to be weighted according to their relations to the question. This is the approach we plan to start with for the task at hand.
 ## Dataset
 The Stanford Question Answering Dataset **(SQuAD)** is a dataset for machine comprehension based on Wikipedia.
 The dataset contains 87k examples for training and 10k for development, with a large hidden test set.
