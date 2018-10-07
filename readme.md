@@ -19,8 +19,9 @@
    the paragraph vectors {p1 , . . . , pm} and the question vector q as input,and simply train two classifiers 
    independently for predicting the two ends of the span. Concretely,we use a bilinear term to capture the similarity 
    between pi and q and compute the probabilities of each token being start and end as:
-            P_start(i) ∝ exp(pi Ws q)
-            P_end(i) ∝ exp(pi We q)
+   * P_start(i) ∝ exp(pi Ws q)
+   * P_end(i) ∝ exp(pi We q)
+   
    To make scorescompatible across paragraphs,we use the unnormalized exponential and take argmax over all considered 
    paragraph spans for our final prediction.
 ## Baseline
