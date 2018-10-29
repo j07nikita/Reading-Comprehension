@@ -1,0 +1,99 @@
+10/29/2018 04:39:44 PM: [ COMMAND: scripts/reader/train.py --embedding-file glove.840B.300d.txt --tune-partial 100 ]
+10/29/2018 04:39:44 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:39:44 PM: [ Load data files ]
+10/29/2018 04:39:44 PM: [ Num train examples = 15 ]
+10/29/2018 04:39:44 PM: [ Num dev examples = 9 ]
+10/29/2018 04:39:44 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:39:44 PM: [ Training model from scratch... ]
+10/29/2018 04:39:44 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:39:44 PM: [ Generate features ]
+10/29/2018 04:39:44 PM: [ Num features = 34 ]
+10/29/2018 04:39:44 PM: [ {'in_question': 0, 'in_question_uncased': 1, 'in_question_lemma': 2, 'pos=NNP': 3, 'pos=-LRB-': 4, 'pos=:': 5, 'pos=JJ': 6, 'pos=NN': 7, 'pos=-RRB-': 8, 'pos=VBN': 9, 'pos=CD': 10, 'pos=,': 11, 'pos=VBZ': 12, 'pos=DT': 13, 'pos=CC': 14, 'pos=.': 15, 'pos=IN': 16, 'pos=PRP': 17, 'pos=VBD': 18, 'pos=NNS': 19, 'pos=TO': 20, 'pos=POS': 21, 'pos=PRP$': 22, 'pos=RB': 23, 'pos=WDT': 24, 'pos=``': 25, "pos=''": 26, 'ner=PERSON': 27, 'ner=O': 28, 'ner=DATE': 29, 'ner=MISC': 30, 'ner=LOCATION': 31, 'ner=NUMBER': 32, 'tf': 33} ]
+10/29/2018 04:39:44 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:39:44 PM: [ Build dictionary ]
+10/29/2018 04:39:44 PM: [ Restricting to words in scripts/reader/glove.840B.300d.txt ]
+10/29/2018 04:41:10 PM: [ Num words in set = 2195961 ]
+10/29/2018 04:41:11 PM: [ Num words = 210 ]
+10/29/2018 04:41:11 PM: [ Loading pre-trained embeddings for 208 words from scripts/reader/glove.840B.300d.txt ]
+10/29/2018 04:41:27 PM: [ WARN: Duplicate embedding found for ; ]
+10/29/2018 04:42:34 PM: [ Loaded 208 embeddings (100.00%) ]
+10/29/2018 04:42:34 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:42:34 PM: [ Counting 100 most frequent question words ]
+10/29/2018 04:42:34 PM: [ ('?', 15) ]
+10/29/2018 04:42:34 PM: [ ('did', 9) ]
+10/29/2018 04:42:34 PM: [ ('Beyoncé', 7) ]
+10/29/2018 04:42:34 PM: [ ('What', 6) ]
+10/29/2018 04:42:34 PM: [ ("'s", 6) ]
+10/29/2018 04:42:34 PM: [ ... ]
+10/29/2018 04:42:34 PM: [ ('Grammy', 1) ]
+10/29/2018 04:42:34 PM: [ ('awards', 1) ]
+10/29/2018 04:42:34 PM: [ ('win', 1) ]
+10/29/2018 04:42:34 PM: [ ('for', 1) ]
+10/29/2018 04:42:34 PM: [ ('name', 1) ]
+10/29/2018 04:42:34 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:42:34 PM: [ Make data loaders ]
+10/29/2018 04:42:34 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:42:34 PM: [ CONFIG:
+{
+    "batch_size": 32,
+    "checkpoint": false,
+    "concat_rnn_layers": true,
+    "cuda": false,
+    "data_dir": "scripts/reader",
+    "data_workers": 5,
+    "dev_file": "scripts/reader/dev.txt",
+    "dev_json": "scripts/reader/dev-v2.0.json",
+    "display_iter": 25,
+    "doc_layers": 3,
+    "dropout_emb": 0.4,
+    "dropout_rnn": 0.4,
+    "dropout_rnn_output": true,
+    "embed_dir": "scripts/reader",
+    "embedding_dim": 300,
+    "embedding_file": "scripts/reader/glove.840B.300d.txt",
+    "expand_dictionary": false,
+    "fix_embeddings": false,
+    "gpu": -1,
+    "grad_clipping": 10,
+    "hidden_size": 128,
+    "learning_rate": 0.1,
+    "log_file": "scripts/reader/20181029-f8d69353.txt",
+    "max_len": 15,
+    "model_dir": "scripts/reader",
+    "model_file": "scripts/reader/20181029-f8d69353.mdl",
+    "model_name": "20181029-f8d69353",
+    "model_type": "rnn",
+    "momentum": 0,
+    "no_cuda": false,
+    "num_epochs": 40,
+    "official_eval": true,
+    "optimizer": "adamax",
+    "parallel": false,
+    "pretrained": "",
+    "question_layers": 3,
+    "question_merge": "self_attn",
+    "random_seed": 1013,
+    "restrict_vocab": true,
+    "rnn_padding": false,
+    "rnn_type": "lstm",
+    "sort_by_len": true,
+    "test_batch_size": 128,
+    "train_file": "scripts/reader/out_file.txt",
+    "tune_partial": 100,
+    "uncased_doc": false,
+    "uncased_question": false,
+    "use_in_question": true,
+    "use_lemma": true,
+    "use_ner": true,
+    "use_pos": true,
+    "use_qemb": true,
+    "use_tf": true,
+    "valid_metric": "f1",
+    "weight_decay": 0
+} ]
+10/29/2018 04:42:34 PM: [ ---------------------------------------------------------------------------------------------------- ]
+10/29/2018 04:42:34 PM: [ Starting training... ]
+10/29/2018 04:42:38 PM: [ train: Epoch = 0 | iter = 0/1 | loss = 9.84 | elapsed time = 4.51 (s) ]
+10/29/2018 04:42:38 PM: [ train: Epoch 0 done. Time for epoch = 4.52 (s) ]
+10/29/2018 04:42:39 PM: [ train valid unofficial: Epoch = 0 | start = 26.67 | end = 33.33 | exact = 26.67 | examples = 15 | valid time = 0.85 (s) ]
+10/29/2018 04:42:40 PM: [ dev valid unofficial: Epoch = 0 | start = 0.00 | end = 0.00 | exact = 0.00 | examples = 9 | valid time = 0.52 (s) ]
